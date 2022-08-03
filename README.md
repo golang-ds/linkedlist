@@ -6,7 +6,7 @@
 Library of generic singly, doubly, and circularly linked-list data structures for Go.
 
 * [singly linked-list](./singly/)
-
+* [doubly linked-list](./doubly/)
 
 
 ## Install
@@ -22,6 +22,17 @@ import "github.com/golang-ds/linkedlist/singly"
 #### Use
 ```
 list := singly.New[int]()
+list.AddFirst(1)
+```
+
+## Doubly LinkedList Usage
+#### Import
+```
+import "github.com/golang-ds/linkedlist/doubly"
+```
+#### Use
+```
+list := doubly.New[int]()
 list.AddFirst(1)
 ```
 
