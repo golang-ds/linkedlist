@@ -8,6 +8,7 @@ type Node[T any] struct {
 }
 
 // String returns the string representation of the node's data.
+// time-complexity: O(1)
 func (n *Node[T]) String() string {
 	return fmt.Sprint(n.Data)
 }

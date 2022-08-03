@@ -12,16 +12,19 @@ type LinkedList[T any] struct {
 }
 
 // New constructs and returns an empty singly linked-list.
+// time-complexity: O(1)
 func New[T any]() LinkedList[T] {
 	return LinkedList[T]{}
 }
 
 // IsEmpty returns true if the linked-list doesn't contain any nodes.
+// time-complexity: O(1)
 func (s *LinkedList[T]) IsEmpty() bool {
 	return s.Size == 0
 }
 
 // First returns the first element of the list. It returns false if the list is empty.
+// time-complexity: O(1)
 func (s *LinkedList[T]) First() (data T, ok bool) {
 	if s.IsEmpty() {
 		return
@@ -30,6 +33,7 @@ func (s *LinkedList[T]) First() (data T, ok bool) {
 }
 
 // Last returns the last element of the list. It returns false if the list is empty.
+// time-complexity: O(1)
 func (s *LinkedList[T]) Last() (data T, ok bool) {
 	if s.IsEmpty() {
 		return
@@ -38,6 +42,7 @@ func (s *LinkedList[T]) Last() (data T, ok bool) {
 }
 
 // AddFirst adds a new node to the beginning of the list.
+// time-complexity: O(1)
 func (s *LinkedList[T]) AddFirst(data T) {
 	s.Head = &Node[T]{Data: data, Next: s.Head}
 
@@ -49,6 +54,7 @@ func (s *LinkedList[T]) AddFirst(data T) {
 }
 
 // AddLast adds a new node to the end of the list.
+// time-complexity: O(1)
 func (s *LinkedList[T]) AddLast(data T) {
 	n := &Node[T]{Data: data}
 
@@ -64,6 +70,7 @@ func (s *LinkedList[T]) AddLast(data T) {
 }
 
 // Add adds a new node to the given index in the list. It returns ErrInvalidIndex if the given index is out of bound.
+// time-complexity: O(n)
 func (s *LinkedList[T]) Add(data T, index int) error {
 	if index < 0 || index > s.Size {
 		return ErrInvalidIndex
@@ -97,6 +104,7 @@ func (s *LinkedList[T]) Add(data T, index int) error {
 }
 
 // RemoveFirst removes and returns the first element of the list. It returns false if the list is empty.
+// time-complexity: O(1)
 func (s *LinkedList[T]) RemoveFirst() (val T, ok bool) {
 	if s.IsEmpty() {
 		return
@@ -115,6 +123,7 @@ func (s *LinkedList[T]) RemoveFirst() (val T, ok bool) {
 }
 
 // RemoveLast removes and returns the last element of the list. It returns false if the list empty.
+// time-complexity: O(n)
 func (s *LinkedList[T]) RemoveLast() (val T, ok bool) {
 	if s.IsEmpty() {
 		return
@@ -143,6 +152,7 @@ func (s *LinkedList[T]) RemoveLast() (val T, ok bool) {
 
 // Remove removes and returns the node in the given index. It returns ErrInvalidIndex and ErrEmptyList
 // if the list is empty or the index is out of bound.
+// time-complexity: O(n)
 func (s *LinkedList[T]) Remove(index int) (val T, err error) {
 	if s.IsEmpty() {
 		return val, ErrEmptyList
@@ -181,6 +191,7 @@ func (s *LinkedList[T]) Remove(index int) (val T, err error) {
 }
 
 // String returns the string representation of the list.
+// time-complexity: O(n)
 func (s *LinkedList[T]) String() string {
 	var b strings.Builder
 
@@ -198,6 +209,7 @@ func (s *LinkedList[T]) String() string {
 }
 
 // ToSlice returns the linked-list as a slice.
+// time-complexity: O(n)
 func (s *LinkedList[T]) ToSlice() []T {
 	r := make([]T, s.Size)
 
