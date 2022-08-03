@@ -197,8 +197,7 @@ func (s *LinkedList[T]) String() string {
 
 	b.WriteString("[ ")
 
-	current := s.Head
-	for ; current != nil; current = current.Next {
+	for current := s.Head; current != nil; current = current.Next {
 		b.WriteString(fmt.Sprint(current.Data))
 		b.WriteString(" ")
 	}
