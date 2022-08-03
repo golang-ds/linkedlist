@@ -25,3 +25,7 @@ list := singly.New[int]()
 list.AddFirst(1)
 ```
 
+## Todo
+* OfRange factory function
+* OfSlice factory function
+* Init(range, func) factory function
