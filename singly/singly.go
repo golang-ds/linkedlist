@@ -12,8 +12,8 @@ type LinkedList[T any] struct {
 }
 
 // New constructs and returns an empty singly linked-list.
-func New[T any]() *LinkedList[T] {
-	return &LinkedList[T]{}
+func New[T any]() LinkedList[T] {
+	return LinkedList[T]{}
 }
 
 // IsEmpty returns true if the linked-list doesn't contain any nodes.
@@ -41,7 +41,7 @@ func (s *LinkedList[T]) Last() (data T, ok bool) {
 func (s *LinkedList[T]) AddFirst(data T) {
 	s.Head = &Node[T]{Data: data, Next: s.Head}
 
-	if s.Size == 0 {
+	if s.IsEmpty() {
 		s.Tail = s.Head
 	}
 
