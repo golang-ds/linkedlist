@@ -7,6 +7,7 @@ Library of generic singly, doubly, and circularly linked-list data structures fo
 
 * [singly linked-list](./singly/)
 * [doubly linked-list](./doubly/)
+* [circularly linked-list](./circularly/)
 
 
 ## Install
@@ -35,6 +36,18 @@ import "github.com/golang-ds/linkedlist/doubly"
 list := doubly.New[int]()
 list.AddFirst(1)
 ```
+
+## Circularly LinkedList Usage
+#### Import
+```
+import "github.com/golang-ds/linkedlist/circularly"
+```
+#### Use
+```
+list := circularly.New[int]()
+list.AddFirst(1)
+```
+
 
 ## Todo
 * OfRange factory function
