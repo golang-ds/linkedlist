@@ -1,15 +1,2 @@
+// package circularly implements a generic circularly-linked-list.
 package circularly
-
-/*
-Supported methods:
-* IsEmpty
-* First
-* Last
-* Rotate
-* AddFirst
-* AddLast
-* RemoveFirst
-* RemoveLast
-* Equals
-* String
-*/
